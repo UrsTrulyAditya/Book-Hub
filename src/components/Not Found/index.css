@@ -1,0 +1,38 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.not-found-img {
+  width: 400px;
+}
+
+h1 {
+  color: #334155;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: bold;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+p {
+  font-size: 16px;
+}
+
+button {
+  font-family: 'roboto';
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 16px;
+  color: #ffffff;
+  background-color: #0284c7;
+  border: none;
+  border-radius: 4px;
+  margin-left: 14px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 15px;
+}
