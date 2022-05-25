@@ -1,5 +1,6 @@
-import Slider from 'react-slick'
+import {Component} from 'react'
 import {Link} from 'react-router-dom'
+import Slider from 'react-slick'
 
 /* Add css to your project */
 import './index.css'
@@ -35,45 +36,39 @@ const settings = {
   ],
 }
 
-const ReactSlick = props => {
-  const {booksList} = props
+class ReactSlick extends Component {
+  renderSlider = () => {
+    const {topRatedBooks} = this.props
 
-  return (
-    <>
-      <div className="main-container  ">
-        <div className="books">
-          <h1 className="heading">Top Rated Books</h1>
+    return (
+      <Slider {...settings}>
+        {topRatedBooks.map(eachLogo => {
+          const {id, coverPic, title, authorName} = eachLogo
+          return (
+            <ul className="slick-item home-book-list" key={id}>
+              <li className="link-item">
+                <Link to={`/books/${id}`} className="home-link-item">
+                  <img className="logo-image" src={coverPic} alt={title} />
+                  <div>
+                    <h1 className="top-rated-book-heading">{title}</h1>
+                    <p className="top-rated-book-author">{authorName}</p>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          )
+        })}
+      </Slider>
+    )
+  }
 
-          <div>
-            <Link to="/shelf">
-              <button type="button" className="books-button">
-                Find Books
-              </button>
-            </Link>
-          </div>
-        </div>
-
-        <ul className="slick-container">
-          <Slider {...settings}>
-            {booksList.map(each => {
-              const {id, coverPic, authorName, title} = each
-              return (
-                <li className="carosel">
-                  <Link to={`/books/${id}`} className="link-item">
-                    <div className="list-item text-box" key={id}>
-                      <img className="logo-image" src={coverPic} alt={title} />
-                      <h1 className="bookName"> {title} </h1>
-                      <p className="author">{authorName}</p>
-                    </div>
-                  </Link>
-                </li>
-              )
-            })}
-          </Slider>
-        </ul>
+  render() {
+    return (
+      <div className="main-container">
+        <div className="slick-container">{this.renderSlider()}</div>
       </div>
-    </>
-  )
+    )
+  }
 }
 
 export default ReactSlick

@@ -1,163 +1,73 @@
-.home-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.home-main-container {
   background-color: #e5e5e5;
-  width: 100%;
-  padding: 50px;
-}
-
-.register-prime-image {
-  margin-top: 30px;
-}
-
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh;
-}
-
-.sliderBox {
-  width: 90%;
-  max-width: 1200px;
-  align-self: center;
-}
-
-@media screen and (min-width: 768px) {
-  .home-container {
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 96px;
-  }
-  .failureBox {
-    margin-top: 25px;
-    background-color: white;
-    width: 60%;
-    box-shadow: 0px 8px 40px rgba(204, 200, 200, 0.61);
-    padding: 64px 48px 64px 48px;
-    align-self: center;
-    border-radius: 18px;
-    padding: 18px;
-    text-align: center;
-  }
-  .fail {
-    font-size: 22px;
-    color: #1e293b;
-    font-weight: 500;
-  }
-}
-
-.home-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-@media screen and (min-width: 768px) {
-  .home-content {
-    align-items: flex-start;
-  }
-}
-
-.home-mobile-img {
-  width: 206px;
-}
-
-@media screen and (min-width: 768px) {
-  .home-mobile-img {
-    display: none;
-  }
-}
-
-.home-desktop-img {
-  width: 50%;
-  max-width: 450px;
-  margin-left: 85px;
+  width: 100%;
+  height: 125vh;
+  max-height: 1024px;
+  margin-top: 0px;
 }
 
 @media screen and (max-width: 767px) {
-  .home-desktop-img {
-    display: none;
-  }
-
-  .failImg {
-    width: 15px;
-    height: 20px;
-  }
-
-  .failureBox {
-    background-color: white;
-    width: 60%;
-
-    align-self: center;
-    border-radius: 18px;
-    padding: 18px;
-    text-align: center;
-  }
-  .fail {
-    font-size: 122px;
-    color: #1e293b;
-    font-weight: 500;
+  .home-main-container {
+    height: 140vh;
   }
 }
 
+.home-container {
+  width: 80%;
+}
 .home-heading {
   font-family: 'Roboto';
-  font-weight: bold;
-  margin-top: 0px;
-  font-size: 36px;
-  color: #1e293b;
-  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+.home-heading-description {
+  font-family: 'roboto';
+  font-size: 18px;
+  font-weight: 300;
+  color: #000000;
 }
 
-@media screen and (min-width: 768px) {
-  .bookName {
-    font-size: 24px;
-    text-align: center;
-  }
+.slider-show-container {
+  height: 355px;
+  width: 90%;
+  max-width: 1040px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  padding: 5px;
+  margin-top: 32px;
+  background-color: #ffffff;
 }
-
-.home-description {
-  font-family: 'Roboto';
-  margin-top: 36px;
+/* for top rated books and find button */
+.top-rated-books-and-find-books {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.find-books-button {
+  padding: 8px 16px;
+  background-color: #0284c7;
+  border-radius: 5px;
+  color: #ffffff;
   font-size: 14px;
-  line-height: 28px;
-  color: #64748b;
-  margin-bottom: 0;
-  text-align: center;
+  font-weight: 300;
+  font-family: 'roboto';
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
-  .home-description {
-    font-size: 18px;
-    margin-top: 0;
-    text-align: left;
-  }
-  .mobile {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shop-now-button {
-    width: 150px;
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .home-mobile-content {
-    background-color: #e5e5e5;
-    width: 100vw;
-    padding: 55px;
-  }
-
-  .web {
-    display: none;
-  }
-  .home-description {
-    font-size: 20px;
-  }
+.top-rated-books {
+  color: #1e293b;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Roboto';
 }

@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom'
 
 import './index.css'
 
-class Login extends Component {
+class LoginForm extends Component {
   state = {
     username: '',
     password: '',
@@ -127,4 +127,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default LoginForm

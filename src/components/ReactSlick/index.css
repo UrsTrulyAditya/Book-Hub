@@ -2,91 +2,145 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
-  padding: 100px;
-  border-radius: 15px;
-  height: 600px;
-  background-color: white;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  margin-left: 0px;
-  box-shadow: 0px 8px 40px rgba(204, 200, 200, 0.61);
-  padding: 64px 48px 64px 48px;
-}
-
-.list-item {
-  list-style-type: none;
-}
-
-.books-button {
-  font-family: 'roboto';
-  font-weight: 600;
-  font-size: 16px;
-  padding: 8px 16px;
-  color: #ffffff;
-  background-color: #0284c7;
-  border: none;
-  border-radius: 4px;
-  margin-left: 14px;
-  cursor: pointer;
-  outline: none;
-  margin-top: 15px;
-}
-
-.heading {
-  color: #1e293b;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 600;
-}
-
-.bookName {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 32px;
-  /* identical to box height, or 133% */
-
-  text-align: center;
-
-  /* Light / blue-gray / 700 */
-  color: #334155;
-}
-
-.author {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 16px;
-  /* identical to box height, or 114% */
-
-  text-align: center;
-
-  /* Light / blue-gray / 600 */
-
-  color: #475569;
-}
-
-.books {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  margin-top: 30px;
+  padding: 8x;
 }
 
 .slick-container {
-  align-self: center;
-  width: 100%;
-  max-width: 1800px;
-  margin-bottom: 18px;
-  margin-right: 20px;
+  width: 90%;
+  max-width: 900px;
+  margin-top: 10px;
 }
 
 .logo-image {
-  width: 230px;
-  height: 270px;
+  height: 125px;
+  width: 110px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 479px) {
+  .logo-image {
+    height: 160px;
+    width: 127px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .logo-image {
+    height: 170px;
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .logo-image {
+    height: 120px;
+    width: 115px;
+  }
+}
+
+@media screen and (width: 768px) {
+  .logo-image {
+    height: 115px;
+    width: 125px;
+  }
+  .top-rated-book-heading {
+    width: 125px;
+    text-align: center;
+  }
+  .top-rated-book-author {
+    text-align: center;
+    font-size: 15px;
+    width: 125px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 766px) {
+  .logo-image {
+    height: 115px;
+    width: 125px;
+    font-size: 15px;
+  }
+  .top-rated-book-heading {
+    width: 125px;
+    text-align: center;
+  }
+  .top-rated-book-author {
+    text-align: center;
+    font-size: 15px;
+    width: 125px;
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 3000px) {
+  .top-rated-book-heading {
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: #334155;
+    font-weight: 600;
+    text-align: center;
+  }
+  .top-rated-book-author {
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    color: #475569;
+  }
+}
+
+.top-rated-book-heading {
+  font-family: 'Roboto';
+  font-size: 15px;
+  color: #334155;
+  font-weight: 600;
+  text-align: center;
+}
+.top-rated-book-author {
+  font-family: 'Roboto';
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  color: #475569;
+}
+
+@media screen and (max-width: 767px) {
+  .top-rated-book-heading {
+    font-family: 'Roboto';
+    font-size: 10px;
+    width: 115px;
+    color: #334155;
+    font-weight: 600;
+    text-align: center;
+  }
+  .top-rated-book-author {
+    width: 115px;
+    font-family: 'Roboto';
+    font-size: 8px;
+    font-weight: 600;
+    text-align: center;
+    color: #475569;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .top-rated-book-heading {
+    font-family: 'Roboto';
+    font-size: 10px;
+    width: 115px;
+    color: #334155;
+    font-weight: 600;
+    text-align: center;
+  }
+  .top-rated-book-author {
+    width: 115px;
+    font-family: 'Roboto';
+    font-size: 8px;
+    font-weight: 600;
+    text-align: center;
+    color: #475569;
+  }
 }
 
 /* You can change the CSS color to style the Next and 
@@ -94,5 +148,13 @@ Previous Arrow buttons according to your project */
 
 .slick-prev:before,
 .slick-next:before {
+  color: black;
+}
+.home-book-list {
+  list-style-type: none;
+}
+
+.home-link-item {
+  text-decoration: none;
   color: black;
 }

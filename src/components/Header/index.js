@@ -1,85 +1,123 @@
+import {Component} from 'react'
+
 import {Link, withRouter} from 'react-router-dom'
+import {FaBars} from 'react-icons/fa'
+
+import {AiFillCloseCircle} from 'react-icons/ai'
 import Cookies from 'js-cookie'
+
 import './index.css'
 
-const Header = props => {
-  const onClickLogout = () => {
-    const {history} = props
+class Header extends Component {
+  state = {
+    isClick: false,
+  }
+
+  onClickLogout = () => {
+    const {history} = this.props
     Cookies.remove('jwt_token')
     history.replace('/login')
   }
 
-  return (
-    <>
-      <nav className="nav-header">
-        <div className="nav-bar-large-container">
-          <Link to="/">
-            <div className="header-logo-container">
-              <img
-                src="https://res.cloudinary.com/daari0y7l/image/upload/v1644069309/Group_7731_1_qmgjyu.png"
-                className="website-logo"
-                alt="website logo"
-              />
-            </div>
-          </Link>
-
-          <ul className="nav-menu">
-            <Link to="/" className="nav-link">
-              <li className="nav-menu-item">Home</li>
-            </Link>
-            <Link to="/shelf" className="nav-link">
-              <li className="nav-menu-item">Bookshelves</li>
-            </Link>
-          </ul>
-          <Link to="/login">
-            <button
-              className="logout-desktop-btn"
-              type="button"
-              onClick={onClickLogout}
-            >
-              Logout
-            </button>
-          </Link>
-        </div>
-      </nav>
-
-      <nav className="nav-header-mobile">
-        <div className="nav-bar-large-container">
-          <Link to="/">
-            <div className="header-logo-container">
-              <img
-                src="https://res.cloudinary.com/daari0y7l/image/upload/v1644069309/Group_7731_1_qmgjyu.png"
-                className="website-logo"
-                alt="website logo"
-              />
-            </div>
-          </Link>
-
-          <ul className="nav-menu">
-            <Link to="/" className="nav-link">
-              <li className="nav-menu-item">Home</li>
-            </Link>
-            <Link to="/shelf" className="nav-link">
-              <li className="nav-menu-item">Shelves</li>
-            </Link>
-          </ul>
-          <Link to="/login">
-            <button
-              className="logout-desktop-btn"
-              type="button"
-              onClick={onClickLogout}
-            >
-              <img
-                src="https://res.cloudinary.com/daari0y7l/image/upload/v1644981337/transparent-web-interface-icons-icon-logout-icon-5f8bbf9bc2f138.8715297616029940757985_qfwk1t.png"
-                alt="log out"
-                className="log-out-m"
-              />
-            </button>
-          </Link>
-        </div>
-      </nav>
-    </>
+  scrollOptions = () => (
+    <ul className="options-container">
+      <li className="nav-menu-item">
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+      </li>
+      <li className="nav-menu-item">
+        <Link to="/shelf" className="nav-link">
+          Bookshelves
+        </Link>
+      </li>
+      <button className="logout-desktop-button" type="button">
+        Logout
+      </button>
+      <button
+        type="button"
+        className="close-button"
+        onClick={this.onClickNavbar}
+      >
+        <AiFillCloseCircle className="close-logo" />
+      </button>
+    </ul>
   )
+
+  onClickNavbar = () => {
+    this.setState(prevState => ({
+      isClick: !prevState.isClick,
+    }))
+  }
+
+  render() {
+    const {isClick} = this.state
+    const {currentRoute} = this.props
+
+    return (
+      <nav className="nav-header" fixed="true">
+        <div className="nav-content">
+          <div className="navbar-mobile-logo-main-container">
+            <div className="navbar-mobile-logo-container">
+              <Link to="/">
+                <img
+                  src="https://res.cloudinary.com/saikrishnaboga-ccbp-tech/image/upload/v1643539861/Book-Hub%20/Group_7731login-B-logo_vneo4x.png"
+                  alt="website logo"
+                  className="website-logo"
+                />
+              </Link>
+              <button
+                type="button"
+                className="nav-bars-button"
+                onClick={this.onClickNavbar}
+              >
+                <FaBars className="nav-bars" />
+              </button>
+            </div>
+            <div className="scroll-options-container">
+              {isClick && this.scrollOptions()}
+            </div>
+          </div>
+          <div className="navbar-desktop-container">
+            <Link to="/" className="nav-link">
+              <img
+                src="https://res.cloudinary.com/saikrishnaboga-ccbp-tech/image/upload/v1643539861/Book-Hub%20/Group_7731login-B-logo_vneo4x.png"
+                alt="website logo"
+                className="website-logo"
+              />
+            </Link>
+            <ul className="nav-menu">
+              <Link to="/" className="nav-link">
+                <li
+                  className={`nav-menu-item ${
+                    currentRoute === 'home' && 'home-true'
+                  }`}
+                >
+                  Home
+                </li>
+              </Link>
+              <Link to="/shelf" className="nav-link">
+                <li
+                  className={`nav-menu-item ${
+                    currentRoute === 'shelf' && 'shelf-true'
+                  }`}
+                >
+                  Bookshelves
+                </li>
+              </Link>
+              <button
+                className="logout-desktop-button"
+                onClick={this.onClickLogout}
+                type="button"
+              >
+                Logout
+              </button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    )
+  }
 }
 
 export default withRouter(Header)

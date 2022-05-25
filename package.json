@@ -71,5 +71,17 @@
       "Firefox ESR",
       "not ie < 11"
     ]
-  }
+  },
+  "description": "In this project let's build a **Book Hub** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrsTrulyAditya/Book-Hub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UrsTrulyAditya/Book-Hub/issues"
+  },
+  "homepage": "https://github.com/UrsTrulyAditya/Book-Hub#readme"
 }
